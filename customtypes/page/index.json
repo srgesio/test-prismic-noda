@@ -1,15 +1,12 @@
 {
-  "id": "home",
-  "label": "Página Inicial",
+  "id": "page",
+  "label": "Page",
   "format": "page",
-  "repeatable": false,
+  "repeatable": true,
   "status": true,
   "json": {
     "Main": {
-      "text": {
-        "type": "Text",
-        "config": { "label": "Text", "placeholder": "" }
-      },
+      "uid": { "config": { "label": "UID" }, "type": "UID" },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
