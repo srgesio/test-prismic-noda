@@ -3,5 +3,6 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  post: dynamic(() => import("./Post")),
   title: dynamic(() => import("./Title")),
 };

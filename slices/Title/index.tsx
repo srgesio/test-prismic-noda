@@ -9,7 +9,7 @@ export type TitleProps = SliceComponentProps<Content.TitleSlice>;
 /**
  * Component for "Title" Slices.
  */
-const Title = ({ slice }: TitleProps): JSX.Element => {
+const Title = ({ slice }: TitleProps) => {
   return (
     <section
       data-slice-type={slice.slice_type}

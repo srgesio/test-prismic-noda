@@ -144,6 +144,33 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 export type AllDocumentTypes = HomeDocument | PageDocument;
 /**
+ * Default variation for Post Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type PostSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+/**
+ * Slice variation for *Post*
+ *
+ */
+type PostSliceVariation = PostSliceDefault;
+/**
+ * Post Shared Slice
+ *
+ * - **API ID**: `post`
+ * - **Description**: `Post`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type PostSlice = prismic.SharedSlice<"post", PostSliceVariation>;
+/**
  * Primary content in Title → Primary
  *
  */
@@ -202,6 +229,9 @@ declare module "@prismicio/client" {
       PageDocumentDataSlicesSlice,
       PageDocument,
       AllDocumentTypes,
+      PostSliceDefault,
+      PostSliceVariation,
+      PostSlice,
       TitleSliceDefaultPrimary,
       TitleSliceDefault,
       TitleSliceVariation,

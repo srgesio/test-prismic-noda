@@ -7,6 +7,8 @@ import { components } from "@/slices/";
 export default async function Home() {
   const client = createClient();
   const page = await client.getSingle("home");
+  const document = await client.dangerouslyGetAll();
+  console.log("==>", document[0].data.slices[0]?.primary.title)
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <SliceZone slices={page.data.slices} components={components} />
